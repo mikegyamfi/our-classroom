@@ -1,0 +1,349 @@
+<aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
+          <div class="app-brand demo">
+            <a href="{% url 'home' %}" class="app-brand-link">
+              <h3>OurClassroom</h3>
+            </a>
+
+            <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
+              <i class="bx bx-chevron-left bx-sm align-middle"></i>
+            </a>
+          </div>
+
+          <div class="menu-inner-shadow"></div>
+
+          <ul class="menu-inner py-1">
+            <!-- Dashboard -->
+            <li class="menu-item active">
+              <a href="{% url 'home' %}" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-home-circle"></i>
+                <div data-i18n="Analytics">Home</div>
+              </a>
+            </li>
+
+            <!-- Layouts -->
+            <li class="menu-item">
+              <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-layout"></i>
+                <div data-i18n="Layouts">Layouts</div>
+              </a>
+
+              <ul class="menu-sub">
+                <li class="menu-item">
+                  <a href="layouts-without-menu.html" class="menu-link">
+                    <div data-i18n="Without menu">Without menu</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="layouts-without-navbar.html" class="menu-link">
+                    <div data-i18n="Without navbar">Without navbar</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="layouts-container.html" class="menu-link">
+                    <div data-i18n="Container">Container</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="layouts-fluid.html" class="menu-link">
+                    <div data-i18n="Fluid">Fluid</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="layouts-blank.html" class="menu-link">
+                    <div data-i18n="Blank">Blank</div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="menu-header small text-uppercase">
+              <span class="menu-header-text">Pages</span>
+            </li>
+            <li class="menu-item">
+              <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-dock-top"></i>
+                <div data-i18n="Account Settings">Information</div>
+              </a>
+              <ul class="menu-sub">
+                <li class="menu-item">
+                  <a href="pages-account-settings-account.html" class="menu-link">
+                    <div data-i18n="Account">Urgent</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="pages-account-settings-notifications.html" class="menu-link">
+                    <div data-i18n="Notifications">All</div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+{#            <li class="menu-item">#}
+{#              <a href="javascript:void(0);" class="menu-link menu-toggle">#}
+{#                <i class="menu-icon tf-icons bx bx-lock-open-alt"></i>#}
+{#                <div data-i18n="Authentications">Authentications</div>#}
+{#              </a>#}
+{#              <ul class="menu-sub">#}
+{#                <li class="menu-item">#}
+{#                  <a href="auth-login-basic.html" class="menu-link" target="_blank">#}
+{#                    <div data-i18n="Basic">Login</div>#}
+{#                  </a>#}
+{#                </li>#}
+{#                <li class="menu-item">#}
+{#                  <a href="auth-register-basic.html" class="menu-link" target="_blank">#}
+{#                    <div data-i18n="Basic">Register</div>#}
+{#                  </a>#}
+{#                </li>#}
+{#                <li class="menu-item">#}
+{#                  <a href="auth-forgot-password-basic.html" class="menu-link" target="_blank">#}
+{#                    <div data-i18n="Basic">Forgot Password</div>#}
+{#                  </a>#}
+{#                </li>#}
+{#              </ul>#}
+{#            </li>#}
+            <li class="menu-item">
+              <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-cube-alt"></i>
+                <div data-i18n="Misc">Misc</div>
+              </a>
+              <ul class="menu-sub">
+                <li class="menu-item">
+                  <a href="pages-misc-error.html" class="menu-link">
+                    <div data-i18n="Error">Error</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="pages-misc-under-maintenance.html" class="menu-link">
+                    <div data-i18n="Under Maintenance">Under Maintenance</div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <!-- Components -->
+{#            <li class="menu-header small text-uppercase"><span class="menu-header-text">Components</span></li>#}
+{#            <!-- Cards -->#}
+{#            <li class="menu-item">#}
+{#              <a href="cards-basic.html" class="menu-link">#}
+{#                <i class="menu-icon tf-icons bx bx-collection"></i>#}
+{#                <div data-i18n="Basic">Cards</div>#}
+{#              </a>#}
+{#            </li>#}
+{#            <!-- User interface -->#}
+{#            <li class="menu-item">#}
+{#              <a href="javascript:void(0)" class="menu-link menu-toggle">#}
+{#                <i class="menu-icon tf-icons bx bx-box"></i>#}
+{#                <div data-i18n="User interface">User interface</div>#}
+{#              </a>#}
+{#              <ul class="menu-sub">#}
+{#                <li class="menu-item">#}
+{#                  <a href="ui-accordion.html" class="menu-link">#}
+{#                    <div data-i18n="Accordion">Accordion</div>#}
+{#                  </a>#}
+{#                </li>#}
+{#                <li class="menu-item">#}
+{#                  <a href="ui-alerts.html" class="menu-link">#}
+{#                    <div data-i18n="Alerts">Alerts</div>#}
+{#                  </a>#}
+{#                </li>#}
+{#                <li class="menu-item">#}
+{#                  <a href="ui-badges.html" class="menu-link">#}
+{#                    <div data-i18n="Badges">Badges</div>#}
+{#                  </a>#}
+{#                </li>#}
+{#                <li class="menu-item">#}
+{#                  <a href="ui-buttons.html" class="menu-link">#}
+{#                    <div data-i18n="Buttons">Buttons</div>#}
+{#                  </a>#}
+{#                </li>#}
+{#                <li class="menu-item">#}
+{#                  <a href="ui-carousel.html" class="menu-link">#}
+{#                    <div data-i18n="Carousel">Carousel</div>#}
+{#                  </a>#}
+{#                </li>#}
+{#                <li class="menu-item">#}
+{#                  <a href="ui-collapse.html" class="menu-link">#}
+{#                    <div data-i18n="Collapse">Collapse</div>#}
+{#                  </a>#}
+{#                </li>#}
+{#                <li class="menu-item">#}
+{#                  <a href="ui-dropdowns.html" class="menu-link">#}
+{#                    <div data-i18n="Dropdowns">Dropdowns</div>#}
+{#                  </a>#}
+{#                </li>#}
+{#                <li class="menu-item">#}
+{#                  <a href="ui-footer.html" class="menu-link">#}
+{#                    <div data-i18n="Footer">Footer</div>#}
+{#                  </a>#}
+{#                </li>#}
+{#                <li class="menu-item">#}
+{#                  <a href="ui-list-groups.html" class="menu-link">#}
+{#                    <div data-i18n="List Groups">List groups</div>#}
+{#                  </a>#}
+{#                </li>#}
+{#                <li class="menu-item">#}
+{#                  <a href="ui-modals.html" class="menu-link">#}
+{#                    <div data-i18n="Modals">Modals</div>#}
+{#                  </a>#}
+{#                </li>#}
+{#                <li class="menu-item">#}
+{#                  <a href="ui-navbar.html" class="menu-link">#}
+{#                    <div data-i18n="Navbar">Navbar</div>#}
+{#                  </a>#}
+{#                </li>#}
+{#                <li class="menu-item">#}
+{#                  <a href="ui-offcanvas.html" class="menu-link">#}
+{#                    <div data-i18n="Offcanvas">Offcanvas</div>#}
+{#                  </a>#}
+{#                </li>#}
+{#                <li class="menu-item">#}
+{#                  <a href="ui-pagination-breadcrumbs.html" class="menu-link">#}
+{#                    <div data-i18n="Pagination &amp; Breadcrumbs">Pagination &amp; Breadcrumbs</div>#}
+{#                  </a>#}
+{#                </li>#}
+{#                <li class="menu-item">#}
+{#                  <a href="ui-progress.html" class="menu-link">#}
+{#                    <div data-i18n="Progress">Progress</div>#}
+{#                  </a>#}
+{#                </li>#}
+{#                <li class="menu-item">#}
+{#                  <a href="ui-spinners.html" class="menu-link">#}
+{#                    <div data-i18n="Spinners">Spinners</div>#}
+{#                  </a>#}
+{#                </li>#}
+{#                <li class="menu-item">#}
+{#                  <a href="ui-tabs-pills.html" class="menu-link">#}
+{#                    <div data-i18n="Tabs &amp; Pills">Tabs &amp; Pills</div>#}
+{#                  </a>#}
+{#                </li>#}
+{#                <li class="menu-item">#}
+{#                  <a href="ui-toasts.html" class="menu-link">#}
+{#                    <div data-i18n="Toasts">Toasts</div>#}
+{#                  </a>#}
+{#                </li>#}
+{#                <li class="menu-item">#}
+{#                  <a href="ui-tooltips-popovers.html" class="menu-link">#}
+{#                    <div data-i18n="Tooltips & Popovers">Tooltips &amp; popovers</div>#}
+{#                  </a>#}
+{#                </li>#}
+{#                <li class="menu-item">#}
+{#                  <a href="ui-typography.html" class="menu-link">#}
+{#                    <div data-i18n="Typography">Typography</div>#}
+{#                  </a>#}
+{#                </li>#}
+{#              </ul>#}
+{#            </li>#}
+{##}
+{#            <!-- Extended components -->#}
+{#            <li class="menu-item">#}
+{#              <a href="javascript:void(0)" class="menu-link menu-toggle">#}
+{#                <i class="menu-icon tf-icons bx bx-copy"></i>#}
+{#                <div data-i18n="Extended UI">Extended UI</div>#}
+{#              </a>#}
+{#              <ul class="menu-sub">#}
+{#                <li class="menu-item">#}
+{#                  <a href="extended-ui-perfect-scrollbar.html" class="menu-link">#}
+{#                    <div data-i18n="Perfect Scrollbar">Perfect scrollbar</div>#}
+{#                  </a>#}
+{#                </li>#}
+{#                <li class="menu-item">#}
+{#                  <a href="extended-ui-text-divider.html" class="menu-link">#}
+{#                    <div data-i18n="Text Divider">Text Divider</div>#}
+{#                  </a>#}
+{#                </li>#}
+{#              </ul>#}
+{#            </li>#}
+{##}
+{#            <li class="menu-item">#}
+{#              <a href="icons-boxicons.html" class="menu-link">#}
+{#                <i class="menu-icon tf-icons bx bx-crown"></i>#}
+{#                <div data-i18n="Boxicons">Boxicons</div>#}
+{#              </a>#}
+{#            </li>#}
+
+            <!-- Forms & Tables -->
+            <li class="menu-header small text-uppercase"><span class="menu-header-text">Admin</span></li>
+            <li class="menu-item">
+              <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-user"></i>
+                <div data-i18n="Form Elements">Students</div>
+              </a>
+              <ul class="menu-sub">
+                <li class="menu-item">
+                  <a href="{% url 'student_list' %}" class="menu-link">
+                    <div data-i18n="Basic Inputs">Students List</div>
+                  </a>
+                </li>
+                  <li class="menu-item">
+                  <a href="{% url 'pending_approvals' %}" class="menu-link">
+                    <div data-i18n="Input groups">Pending Approvals</div>
+                  </a>
+                </li>
+                </li>
+                  <li class="menu-item">
+                  <a href="forms-input-groups.html" class="menu-link">
+                    <div data-i18n="Input groups">Add Student</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="forms-input-groups.html" class="menu-link">
+                    <div data-i18n="Input groups">Send Student Message</div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item">
+              <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-info-circle"></i>
+                <div data-i18n="Form Layouts">Information</div>
+              </a>
+              <ul class="menu-sub">
+                <li class="menu-item">
+                  <a href="{% url 'send_class_info' %}" class="menu-link">
+                    <div data-i18n="Vertical Form">Send Class Information</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="{% url 'add_info_cat' %}" class="menu-link">
+                    <div data-i18n="Horizontal Form">New Info Category</div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item">
+              <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon fa-solid fa-chalkboard-user"></i>
+                <div data-i18n="Form Layouts">Lecturers</div>
+              </a>
+              <ul class="menu-sub">
+                <li class="menu-item">
+                  <a href="{% url 'add_lecturer' %}" class="menu-link">
+                    <div data-i18n="Vertical Form">Add Lecturer</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="{% url 'all_lecturers' %}" class="menu-link">
+                    <div data-i18n="Horizontal Form">All Lecturers</div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+            <li class="menu-item">
+              <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-book"></i>
+                <div data-i18n="Form Layouts">Courses</div>
+              </a>
+              <ul class="menu-sub">
+                <li class="menu-item">
+                  <a href="{% url 'add_course' %}" class="menu-link">
+                    <div data-i18n="Vertical Form">Add Course</div>
+                  </a>
+                </li>
+                <li class="menu-item">
+                  <a href="{% url 'course_list' %}" class="menu-link">
+                    <div data-i18n="Horizontal Form">All Courses</div>
+                  </a>
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </aside>
+        <!-- / Menu -->

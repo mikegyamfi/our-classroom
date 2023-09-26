@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+
+{% block title %}
+	Student List
+{% endblock %}
+
+{% block content %}
+    <!-- Layout wrapper -->
+    <div class="layout-wrapper layout-content-navbar">
+      <div class="layout-container">
+        <!-- Menu -->
+
+        {% include 'inc/sideNav.html' %}
+
+        <!-- Layout container -->
+        <div class="layout-page">
+          <!-- Navbar -->
+
+          {% include 'inc/navbar.html' %}
+
+          <!-- / Navbar -->
+
+          <!-- Content wrapper -->
+          <div class="content-wrapper">
+            <!-- Content -->
+              <div class="container-xxl flex-grow-1 container-p-y">
+                  <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Student List ({{ class }})</span></h4>
+
+                  <!-- Basic Bootstrap Table -->
+              <div class="card p-3">
+                <h5 class="card-header px-0 pt-2 pb-4">Student List Table</h5>
+                <div class="table-responsive text-nowrap">
+                  <table class="table" id="dataTable">
+                    <thead>
+                      <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Status</th>
+                      </tr>
+                    </thead>
+                    <tbody class="table-border-bottom-0">
+                    {% for student in students %}
+                      <tr>
+                        <td><strong>{{ student.student_id }}</strong></td>
+                        <td>{{ student.first_name }} {{ student.last_name }}</td>
+                        <td>{{ student.email }}</td>
+                        <td>{{ student.phone_number }}</td>
+                        {% if student.status == "Active" %}
+                            <td><span class="badge bg-label-success me-1">{{ student.status }}</span></td>
+                        {% else %}
+                            <td><span class="badge bg-label-danger me-1">{{ student.status }}</span></td>
+                        {% endif %}
+                      </tr>
+                    {% endfor %}
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <!--/ Basic Bootstrap Table -->
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+{% endblock content %}
