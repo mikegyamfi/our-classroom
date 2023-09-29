@@ -27,7 +27,8 @@ SECRET_KEY = 'django-insecure-!xw7z27g2m%qhjit7dgwo_9=-%9$6a61e_s8ej1u!km7$%1)wy
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    '127.0.0.1'
+    '127.0.0.1',
+    'our-classroom-gb2de.ondigitalocean.app'
 ]
 
 
