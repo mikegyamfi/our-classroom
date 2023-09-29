@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block title %}
-	All Courses
+	Student List
 {% endblock %}
 
 {% block content %}
@@ -24,37 +24,34 @@
           <div class="content-wrapper">
             <!-- Content -->
               <div class="container-xxl flex-grow-1 container-p-y">
-                  <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Course List ({{ class }})</span></h4>
+                  <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Student List ({{ class }})</span></h4>
 
                   <!-- Basic Bootstrap Table -->
               <div class="card p-3">
-                <h5 class="card-header px-0 pt-2 pb-4">Course List Table</h5>
+                <h5 class="card-header px-0 pt-2 pb-4">Student List Table</h5>
                 <div class="table-responsive text-nowrap">
                   <table class="table" id="dataTable">
                     <thead>
                       <tr>
-                        <th>Course</th>
-                        <th>Program</th>
-                        <th>Lecturer</th>
-                        <th>Day</th>
-                        <th>From</th>
-                        <th>To</th>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Status</th>
                       </tr>
                     </thead>
                     <tbody class="table-border-bottom-0">
-                    {% for course in courses %}
+                    {% for student in students %}
                       <tr>
-                        <td><strong>{{ course.course_name }}  <a href="{% url 'edit_course' pk=course.id %}"><i class="fa fa-pencil"></i></a></strong></td>
-                        <td>{{ course.program_it_belongs_to }}</td>
-                        <td>{{ course.lecturer }}</td>
-                        <td>{{ course.day_taught }}</td>
-                        <td>{{ course.from_time }}</td>
-                        <td>{{ course.to_time }}</td>
-{#                        {% if student.status == "Active" %}#}
-{#                            <td><span class="badge bg-label-success me-1">{{ student.status }}</span></td>#}
-{#                        {% else %}#}
-{#                            <td><span class="badge bg-label-danger me-1">{{ student.status }}</span></td>#}
-{#                        {% endif %}#}
+                        <td><strong>{{ student.student_id }}</strong></td>
+                        <td>{{ student.first_name }} {{ student.last_name }}</td>
+                        <td>{{ student.email }}</td>
+                        <td>{{ student.phone_number }}</td>
+                        {% if student.status == "Active" %}
+                            <td><span class="badge bg-label-success me-1">{{ student.status }}</span></td>
+                        {% else %}
+                            <td><span class="badge bg-label-danger me-1">{{ student.status }}</span></td>
+                        {% endif %}
                       </tr>
                     {% endfor %}
                     </tbody>

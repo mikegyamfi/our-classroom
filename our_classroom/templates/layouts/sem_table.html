@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block title %}
-	All Courses
+	Semester Table
 {% endblock %}
 
 {% block content %}
@@ -24,10 +24,11 @@
           <div class="content-wrapper">
             <!-- Content -->
               <div class="container-xxl flex-grow-1 container-p-y">
-                  <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Course List ({{ class }})</span></h4>
+                  <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Semester Courses ({{ class }})</span></h4>
 
                   <!-- Basic Bootstrap Table -->
-              <div class="card p-3">
+              <div class="col-12">
+                <div class="card p-3">
                 <h5 class="card-header px-0 pt-2 pb-4">Course List Table</h5>
                 <div class="table-responsive text-nowrap">
                   <table class="table" id="dataTable">
@@ -44,7 +45,7 @@
                     <tbody class="table-border-bottom-0">
                     {% for course in courses %}
                       <tr>
-                        <td><strong>{{ course.course_name }}  <a href="{% url 'edit_course' pk=course.id %}"><i class="fa fa-pencil"></i></a></strong></td>
+                        <td><strong>{{ course.course_name }}</strong></td>
                         <td>{{ course.program_it_belongs_to }}</td>
                         <td>{{ course.lecturer }}</td>
                         <td>{{ course.day_taught }}</td>
@@ -61,6 +62,7 @@
                   </table>
                 </div>
               </div>
+                      </div>
               <!--/ Basic Bootstrap Table -->
               </div>
           </div>

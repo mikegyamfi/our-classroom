@@ -43,7 +43,7 @@
                     <tbody class="table-border-bottom-0">
                     {% for lecturer in lecturers %}
                       <tr>
-                        <td><strong>{{ lecturer.staff_id }}</strong></td>
+                        <td><strong>{{ lecturer.staff_id }} <a href="{% url 'edit_lecturer' pk=lecturer.id %}"><i class="fa fa-pencil"></i></a></strong></td>
                         <td>{{ lecturer.name }}</td>
                         <td>{{ lecturer.phone_number }}</td>
                         <td>{{ lecturer.email }}</td>

@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% block title %}Home{% endblock title%}
+{% block title %}All Info{% endblock title%}
 
 
     {% block content %}
@@ -28,7 +28,7 @@
                         <a href="#">{{ dept }}</a>
                     </li>
                     <li class="breadcrumb-item">
-                        <a href="#">{{ prog }}</a>
+                        <a href="#">{{ program }}</a>
                     </li>
                     <li class="breadcrumb-item">
                         <a href="#">H.O.D - {{ hod }}</a>
@@ -60,42 +60,6 @@
                   </div>
                 </div>
                 {% endfor %}
-                  <div class="col-12">
-                <div class="card p-3">
-                <h5 class="card-header px-0 pt-2 pb-4">Course List Table</h5>
-                <div class="table-responsive text-nowrap">
-                  <table class="table" id="dataTable">
-                    <thead>
-                      <tr>
-                        <th>Course</th>
-                        <th>Program</th>
-                        <th>Lecturer</th>
-                        <th>Day</th>
-                        <th>From</th>
-                        <th>To</th>
-                      </tr>
-                    </thead>
-                    <tbody class="table-border-bottom-0">
-                    {% for course in courses %}
-                      <tr>
-                        <td><strong>{{ course.course_name }}</strong></td>
-                        <td>{{ course.program_it_belongs_to }}</td>
-                        <td>{{ course.lecturer }}</td>
-                        <td>{{ course.day_taught }}</td>
-                        <td>{{ course.from_time }}</td>
-                        <td>{{ course.to_time }}</td>
-{#                        {% if student.status == "Active" %}#}
-{#                            <td><span class="badge bg-label-success me-1">{{ student.status }}</span></td>#}
-{#                        {% else %}#}
-{#                            <td><span class="badge bg-label-danger me-1">{{ student.status }}</span></td>#}
-{#                        {% endif %}#}
-                      </tr>
-                    {% endfor %}
-                    </tbody>
-                  </table>
-                </div>
-              </div>
-                      </div>
             </div>
             <!-- / Content -->
 

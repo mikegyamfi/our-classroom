@@ -24,33 +24,18 @@
             <li class="menu-item">
               <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-layout"></i>
-                <div data-i18n="Layouts">Layouts</div>
+                <div data-i18n="Layouts">About Class</div>
               </a>
 
               <ul class="menu-sub">
                 <li class="menu-item">
-                  <a href="layouts-without-menu.html" class="menu-link">
-                    <div data-i18n="Without menu">Without menu</div>
+                  <a href="{% url 'n_students' %}" class="menu-link">
+                    <div data-i18n="Without menu">Students</div>
                   </a>
                 </li>
                 <li class="menu-item">
-                  <a href="layouts-without-navbar.html" class="menu-link">
-                    <div data-i18n="Without navbar">Without navbar</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="layouts-container.html" class="menu-link">
-                    <div data-i18n="Container">Container</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="layouts-fluid.html" class="menu-link">
-                    <div data-i18n="Fluid">Fluid</div>
-                  </a>
-                </li>
-                <li class="menu-item">
-                  <a href="layouts-blank.html" class="menu-link">
-                    <div data-i18n="Blank">Blank</div>
+                  <a href="{% url 'n_lecturers' %}" class="menu-link">
+                    <div data-i18n="Without navbar">Lecturers</div>
                   </a>
                 </li>
               </ul>
@@ -71,7 +56,7 @@
                   </a>
                 </li>
                 <li class="menu-item">
-                  <a href="pages-account-settings-notifications.html" class="menu-link">
+                  <a href="{% url 'all_info' %}" class="menu-link">
                     <div data-i18n="Notifications">All</div>
                   </a>
                 </li>
@@ -103,17 +88,17 @@
             <li class="menu-item">
               <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-cube-alt"></i>
-                <div data-i18n="Misc">Misc</div>
+                <div data-i18n="Misc">TimeTables</div>
               </a>
               <ul class="menu-sub">
                 <li class="menu-item">
-                  <a href="pages-misc-error.html" class="menu-link">
-                    <div data-i18n="Error">Error</div>
+                  <a href="{% url 'sem_table' %}" class="menu-link">
+                    <div data-i18n="Error">Semester Timetable</div>
                   </a>
                 </li>
                 <li class="menu-item">
                   <a href="pages-misc-under-maintenance.html" class="menu-link">
-                    <div data-i18n="Under Maintenance">Under Maintenance</div>
+                    <div data-i18n="Under Maintenance">Exam TimeTable</div>
                   </a>
                 </li>
               </ul>
@@ -258,7 +243,7 @@
 {#                <div data-i18n="Boxicons">Boxicons</div>#}
 {#              </a>#}
 {#            </li>#}
-
+            {% if request.user.role == "Class Representative" %}
             <!-- Forms & Tables -->
             <li class="menu-header small text-uppercase"><span class="menu-header-text">Admin</span></li>
             <li class="menu-item">
@@ -289,8 +274,7 @@
                   </a>
                 </li>
               </ul>
-            </li>
-            <li class="menu-item">
+                <li class="menu-item">
               <a href="javascript:void(0);" class="menu-link menu-toggle">
                 <i class="menu-icon tf-icons bx bx-info-circle"></i>
                 <div data-i18n="Form Layouts">Information</div>
@@ -344,6 +328,7 @@
                 </li>
               </ul>
             </li>
+            {% endif %}
           </ul>
         </aside>
         <!-- / Menu -->

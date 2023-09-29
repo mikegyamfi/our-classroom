@@ -14,6 +14,7 @@ def sign_up(request):
     if request.method == "POST":
         form = forms.CustomUserForm(data=request.POST, role="User")
         if form.is_valid():
+            print(form.cleaned_data["student_id"])
             form.save()
             messages.info(request, f"Sign Up Successful. Log in to continue.")
             return redirect('login')

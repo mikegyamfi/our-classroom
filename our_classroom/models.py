@@ -62,6 +62,7 @@ class Lecturer(models.Model):
 
 class Course(models.Model):
     course_name = models.CharField(max_length=250, null=False, blank=False)
+    course_code = models.CharField(max_length=100, null=False, blank=False)
     lecturer = models.ForeignKey(Lecturer, on_delete=models.CASCADE)
     program_it_belongs_to = models.ForeignKey(Program, on_delete=models.CASCADE)
     level = models.ForeignKey(Level, on_delete=models.CASCADE)

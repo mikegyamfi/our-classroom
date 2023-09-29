@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block title %}
-	Add Course
+	Edit Course
 {% endblock %}
 
 {% block content %}
@@ -24,24 +24,18 @@
           <div class="content-wrapper">
             <!-- Content -->
               <div class="container-xxl flex-grow-1 container-p-y">
-                  <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Add Course ({{ class }})</span></h4>
+                  <h4 class="fw-bold py-3 mb-4"><span class="text-muted fw-light">Edit Course ({{ course }})</span></h4>
 
                 <!-- Basic -->
                       <form action="" method="post">
                           {% csrf_token %}
                 <div class="card mb-4">
-                    <h5 class="card-header">Add Course Form</h5>
+                    <h5 class="card-header">Edit Course Form</h5>
                     <div class="card-body demo-vertical-spacing demo-only-element">
-                        <div class="row">
-                      <div class="col-lg-6 mb-3">
-                        <label for="defaultFormControlInput" class="form-label">Course Title</label>
+                      <div>
+                        <label for="defaultFormControlInput" class="form-label">Name</label>
                         {{ form.name }}
                       </div>
-                            <div class="col-lg-6 mb-3">
-                        <label for="defaultFormControlInput" class="form-label">Course Code</label>
-                        {{ form.course_code }}
-                      </div>
-                            </div>
 {#                      <div>#}
 {#                        <label for="defaultFormControlInput" class="form-label">Program</label>#}
 {#                        {{ form.program }}#}
@@ -66,7 +60,7 @@
                             {{ form.to_time }}
                           </div>
                         </div>
-                        <button type="submit" class="btn btn-success">Add Course</button>
+                        <button type="submit" class="btn btn-success">Edit Course</button>
                     </div>
 
                   </div>

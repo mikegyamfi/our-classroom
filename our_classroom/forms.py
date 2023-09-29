@@ -38,7 +38,7 @@ class CustomUserForm(UserCreationForm):
 
     class Meta:
         model = models.CustomUser
-        fields = ['first_name', 'last_name', 'username', 'email', 'phone_number', 'student_class', 'password1',
+        fields = ['first_name', 'last_name', 'username', 'email', 'phone_number', 'student_id', 'student_class', 'password1',
                   'password2']
 
 
@@ -57,7 +57,39 @@ class Lecturer(forms.Form):
         fields = ['name', 'email', 'phone_number', 'department']
 
 
+class EditLecturer(forms.Form):
+    name = forms.CharField(widget=forms.TextInput(
+        {'class': 'form-control', 'autocomplete': 'off', 'placeholder': 'Jane Doe', 'autofocus': True}))
+    email = forms.CharField(
+        widget=forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'hello@example.com'}))
+    phone_number = forms.CharField(
+        widget=forms.NumberInput(attrs={'class': 'form-control', 'placeholder': '0200000000'}))
+    department = forms.ModelChoiceField(queryset=models.Department.objects.all(), empty_label=None, widget=forms.Select(
+                                               {'class': 'form-control'}))
+
+    class Meta:
+        model = models.Lecturer
+        fields = ['name', 'email', 'phone_number', 'department']
+
+
 class Course(forms.Form):
+    name = forms.CharField(widget=forms.TextInput(
+        {'class': 'form-control', 'autocomplete': 'off', 'placeholder': 'Course', 'autofocus': True}))
+    course_code = forms.CharField(widget=forms.TextInput(
+        {'class': 'form-control', 'autocomplete': 'off', 'placeholder': 'Course Code', 'autofocus': True}))
+    lecturer = forms.ModelChoiceField(queryset=models.Lecturer.objects.all(), empty_label=None, widget=forms.Select(
+                                               {'class': 'form-control'}))
+    # program = forms.ModelChoiceField(queryset=models.Program.objects.all(), empty_label=None, widget=forms.Select(
+    #                                            {'class': 'form-control'}))
+    # level = forms.ModelChoiceField(queryset=models.Level.objects.all(), empty_label=None, widget=forms.Select(
+    #                                            {'class': 'form-control'}))
+    day = forms.ChoiceField(widget=forms.Select(attrs={'class': 'form-control'}), choices=(
+        (1, "Monday"), (2, "Tuesday"), (3, "Wednesday"), (4, "Thursday"), (5, "Friday"), (6, "Saturday"), (7, "Sunday")))
+    from_time = forms.TimeField(widget=forms.TimeInput(attrs={'class': 'form-control', 'type': 'time'}))
+    to_time = forms.TimeField(widget=forms.TimeInput(attrs={'class': 'form-control', 'type': 'time'}))
+
+
+class EditCourse(forms.Form):
     name = forms.CharField(widget=forms.TextInput(
         {'class': 'form-control', 'autocomplete': 'off', 'placeholder': 'Course', 'autofocus': True}))
     lecturer = forms.ModelChoiceField(queryset=models.Lecturer.objects.all(), empty_label=None, widget=forms.Select(

@@ -1,5 +1,7 @@
 from django.urls import path
 from . import views, authviews
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path("", views.home, name='home'),
@@ -20,5 +22,15 @@ urlpatterns = [
     path('elevated/send_class_info', views.send_class_info, name="send_class_info"),
     path('elevated/add_info_cat', views.info_category, name="add_info_cat"),
     path('elevated/approve_student/<int:pk>', views.approve_student, name='approve_student'),
-    path('elevated/deny_student/<int:pk>', views.deny_student, name='deny_student')
-]
+    path('elevated/deny_student/<int:pk>', views.deny_student, name='deny_student'),
+    path('elevated/activate_student/<str:student_id>', views.activate_student, name='activate_student'),
+    path('elevated/deactivate_student/<str:student_id>', views.deactivate_student, name='deactivate_student'),
+    path('elevated/edit_course/<int:pk>', views.edit_course, name='edit_course'),
+    path('elevated/edit_lecturer/<int:pk>', views.edit_lecturer, name='edit_lecturer'),
+
+    path('classmates', views.students, name='n_students'),
+    path('your_lecturers', views.lecturers, name='n_lecturers'),
+    path('student_profile', views.student_profile, name='profile'),
+    path('semester_table', views.semester_table, name='sem_table'),
+    path('all_info', views.all_info, name='all_info')
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
